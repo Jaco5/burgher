@@ -14,19 +14,16 @@ var orm = {
             cb(result);
         })
     },
-    create: function (burger, cb) {
-        connection.query('INSERT INTO burgers SET ?', {
-            burger_name: burger,
-            devoured: false,
-            }, function (err, result) {
+    create: function (burger_name, cb) {
+        connection.query('INSERT INTO burgers SET ?', {burger_name: burger_name}, function (err, result) {
             if (err) throw err;
-            callback(result);
+            cb(result);
           });
     },
     update : function(id, cb) {
         connection.query('UPDATE burgers SET ? WHERE ?', [{devoured: true}, {id: id}], function (err, result) {
             if (err) throw err;
-            callback(result);
+            cb(result);
           });
     },
    

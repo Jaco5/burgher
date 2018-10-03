@@ -1,8 +1,6 @@
 var connection = require("./connection.js")
 
-//select all
-//insert 1
-//update 1
+
 
 var orm = {
     all : function (cb) {
